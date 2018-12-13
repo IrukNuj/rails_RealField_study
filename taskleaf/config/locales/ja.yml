@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除出来ません"
+          has_many: "%{record}が存在しているので削除出来ません"
+    models:
+      task: タスク
+    attributes:
+      task:
+      id: ID
+      name: 名称
+      description: 詳しい説明
