@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    @tasks = Task.all
   end
 
   def show
@@ -16,6 +17,7 @@ class TasksController < ApplicationController
     task = Task.new(task_params)
     task.save!
     redirect_to tasks_url, notice: "タスク#{task.name}を追加しました。"
+    # redirect_to tasks_url, flash: {notice: "タスク#{task.name}を追加しました。"}
   end
 
   private
