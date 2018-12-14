@@ -13,9 +13,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(params.require(:task).permit(:name, :description))
+    task = Task.new(task_params)
     task.save!
     redirect_to tasks_url, notice: "タスク#{task.name}を追加しました。"
   end
 
+  private
+
+  def task_params
+    params.require(:task).permit(:name, :description)
+  end
 end
