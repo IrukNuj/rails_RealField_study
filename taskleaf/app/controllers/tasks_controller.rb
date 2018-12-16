@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-
+    @task = Task.find(params[:id])
   end
 
   def create
@@ -20,6 +20,12 @@ class TasksController < ApplicationController
     task.save!
     redirect_to tasks_url, notice: "タスク#{task.name}を追加しました。"
     # redirect_to tasks_url, flash: {notice: "タスク#{task.name}を追加しました。"}
+  end
+
+  def update
+    task = Task.find(params[:id])
+    task.update!(task_params)
+    redirect_to tasks_url, notice: "タスク「#{task.name}」を追加しました"
   end
 
   private
