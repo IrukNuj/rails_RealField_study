@@ -10,6 +10,6 @@ table.table.table-hover
     tbody
       - @tasks.each do |task|
         tr
-          td= link_to task.name, task
+          td= link_to task.name, tasks_path(task.id)
           / td= link_to task.name, task_path(task)
           td= task.created_at
