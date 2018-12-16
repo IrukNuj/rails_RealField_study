@@ -1,5 +1,5 @@
 h1 タスク一覧
-= link_to '新規登録', new_tasks_path, class: 'btn btn-primary'
+= link_to '新規登録', new_task_path, class: 'btn btn-primary'
 
 .mb-3
 table.table.table-hover
@@ -10,6 +10,6 @@ table.table.table-hover
     tbody
       - @tasks.each do |task|
         tr
-          td= link_to task.name, tasks_path(task.id)
+          td= link_to task.name, task_path(task)
           / td= link_to task.name, task_path(task)
           td= task.created_at
