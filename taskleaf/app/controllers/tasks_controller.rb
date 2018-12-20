@@ -16,10 +16,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    task = Task.new(task_params)
-    task.save!
-    redirect_to tasks_url, notice: "タスク#{task.name}を追加しました。"
-    # redirect_to tasks_url, flash: {notice: "タスク#{task.name}を追加しました。"}
+    # task = Task.new(task_params)
+    # task.save!
+    # redirect_to tasks_url, notice: "タスク#{task.name}を追加しました。"
+    # # redirect_to tasks_url, flash: {notice: "タスク#{task.name}を追加しました。"}
   end
 
   def update
